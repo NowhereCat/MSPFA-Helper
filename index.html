@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MSPaint Helper</title>
+    <link rel="stylesheet" href="css.css">
+  </head>
+  <body>
+
+    <h1 style="text-align: center;">MSPaint Fan Adventure</h1>
+    <hr>
+    <br>
+
+    <div class="flex-container">
+      <div class="flex-child left">
+        <div class="inputDiv">
+          <label id="textLabelInputID">Input Text:</label><br>
+          <textarea  rows="8" cols="80" id="textInput" wrap="hard"></textarea><br><br>
+
+          <div class="presetDiv">
+        <form action="index.html">
+          <label for="presets">Chat Creator: </label>
+          <select name="presets" id="presetsID">
+            <optgroup label="Alternia Trolls" id="presetsIDAT"></optgroup>
+            <optgroup label="Beforus Trolls" id="presetsIDBU"></optgroup>
+            <optgroup label="Beta Kids" id="presetsIDBK"></optgroup>
+            <optgroup label="Alpha Kids" id="presetsIDAK"></optgroup>
+            <optgroup label="Custom" id="presetsIDC"></optgroup>
+          </select>
+        </form>
+
+        </div>
+
+        <br>
+
+          <label>Pesterchum</label>
+          <label class="switch">
+            <input type="checkbox" id="chatClientTypeID">
+            <span class="slider round"></span>
+          </label>
+          <label>Trollian</label>
+          <label>| Time of Conversation </label>
+          <input type="time" id="chatTimeID" value="16:13">
+          <br><br>
+
+          <form action="index.html">
+            <label>Select Title Text Type</label><br>
+            <select id="titleID" onchange="SetTitleTextInt(this.value)">
+              <option value="0">First Name</option>
+              <option value="1">Chat Initials</option>
+              <option value="2">Chat Full Name</option>
+            </select>
+          </form>
+          <br><br>
+
+          <button type="button" name="button" onclick="FilterText()">Process</button>
+        </div>
+        <hr>
+        <div class="outputDivClass">
+          <div class="outputButtonDivClass">
+            <button type="button" name="button" class="outputButtonClass" onclick="OpenDiv('pOutputDiv')">Primary Output</button>
+            <button type="button" name="button" class="outputButtonClass" onclick="OpenDiv('sOutputDiv')">Secondary Output</button>
+          </div>
+          <div class="outputClass" id="pOutputDiv">
+            <div class="titleDiv">
+              <br>
+              <div style="outline-color: red; outline-style: outset; text-align:center; position: relative; top: -7px;">
+                <label class="primaryLabelClass">Primary Output:</label>
+              </div>
+              <div id="outputDivChildID" style="width: 500px;">
+              </div>
+            </div>
+          </div>
+          <div class="outputClass" id="sOutputDiv">
+            <div class="" style="background-color: #ff0000; display: inline-block; text-align:center;">
+              <label class="secondaryLabelClass">Secondary Output</label><br>
+              <textarea class="sotaClass" rows="8" cols="80" id="secondaryOutputTextArea" wrap="hard" readonly></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-child right">
+        <label>Guide</label><br>
+        <textarea id="guideTextID" class="test" rows="8" cols="80" readonly></textarea>
+      </div>
+    </div>
+
+    <script src="code.js"></script>
+  </body>
+</html>
