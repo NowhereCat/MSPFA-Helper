@@ -864,6 +864,7 @@ function SetTitleTextInt(input){
 var clientChatString = "Pestering";
 var secondChatUser = "Error";
 var secondChatUserInitials = "Error";
+var secondChatUserColor = "black";
 
 function FilterText(){
   var targeOutputId = document.getElementById("outputDivChildID");
@@ -890,9 +891,9 @@ function FilterText(){
 
   //Title Update
   if(document.getElementById("chatClientTypeID").checked){
-    clientChatString = "Trolling";
+    clientChatString = "began Trolling";
   } else{
-    clientChatString = "Pestering";
+    clientChatString = "started Pestering";
   }
 
   //Add the for to go through multiple lines. Also the rest of the filters
@@ -900,12 +901,10 @@ function FilterText(){
   var node = document.getElementById("outputDivChildID");
   node.querySelectorAll("*").forEach(n => n.remove());
 
-  //create tittle
+  //Set tittle
 
-  var titleLabel = document.createElement("label");
-
-  titleLabel.id = "titleLabelID";
-  CloneFunction("chatTitleLabel", "outputDivChildID");
+  CloneFunction("titleCloneLabelID", "outputDivChildID", "titleLabelID");
+  var titleLabel = document.getElementById("titleLabelID");
   targeOutputId.appendChild(document.createElement("br"));
   targeOutputId.appendChild(document.createElement("br"));
 
@@ -942,10 +941,12 @@ function FilterText(){
           if(presets[e].tag == inputTags[i]){
             secondChatUser = presets[e].textTitle[2];
             secondChatUserInitials = presets[e].textTitle[1];
+            secondChatUserColor = presets[e].color;
           }
         }
         secondFound = true;
-        titleLabel.innerHTML = SetTile();
+        NewSetTitle();
+        //titleLabel.innerHTML = SetTile();
       }
     }
   }
@@ -959,6 +960,32 @@ var SetTile = function(){
    + clientChatString + " " + secondChatUser + " [" + secondChatUserInitials + "] at " + document.getElementById("chatTimeID").value + " --";
 
    return returnOutput;
+}
+
+function NewSetTitle(){
+  var chatCreatorString = presets[document.getElementById("presetsID").value].textTitle[2];
+  var chatCreatorStringInitials = presets[document.getElementById("presetsID").value].textTitle[1];
+
+  var span1 = document.createElement("span");
+  span1.innerHTML = chatCreatorString + " [" + chatCreatorStringInitials + "]";
+  span1.style.color = presets[document.getElementById("presetsID").value].color;
+
+  var span2 = document.createElement("span");
+  span2.innerHTML = " " + clientChatString + " ";
+
+  var span3 = document.createElement("span");
+  span3.innerHTML = " " + secondChatUser + " [" + secondChatUserInitials + "]";
+  span3.style.color = secondChatUserColor;
+
+  var span4 = document.createElement("span");
+  span4.innerHTML = " at " + document.getElementById("chatTimeID").value + " --";
+
+  var titleLabel = document.getElementById("titleLabelID");
+  titleLabel.innerHTML = "-- ";
+  titleLabel.appendChild(span1);
+  titleLabel.appendChild(span2);
+  titleLabel.appendChild(span3);
+  titleLabel.appendChild(span4);
 }
 
 function BBCodeOutput(input, colorInput){
@@ -1093,12 +1120,14 @@ function OpenDiv(divName){
   document.getElementById(divName).style.display = "block";
 }
 
-function CloneFunction(copyTarget, pasteTarget){
+var itm;
 
-  var itm = document.getElementById(copyTarget);
+function CloneFunction(copyTarget, pasteTarget, newID){
+
+  itm = document.getElementById(copyTarget);
   var cln = itm.cloneNode(true);
-
+  cln.id = newID;
   cln.style.display = "block";
   document.getElementById(pasteTarget).appendChild(cln);
-  itm.remove();
+  //itm.remove();
 }
