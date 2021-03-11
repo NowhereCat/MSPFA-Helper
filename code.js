@@ -911,7 +911,7 @@ function FilterText(){
 
   var secondFound = false;
 
-document.getElementById("secondaryOutputTextArea").innerHTML = "";
+  document.getElementById("secondaryOutputTextArea").innerHTML = "";
 
   for (var i = 0; i < inputArray.length; i++) {
     xDevide = inputArray[i].split(":");
@@ -1091,4 +1091,14 @@ function OpenDiv(divName){
     x[i].style.display = "none";
   }
   document.getElementById(divName).style.display = "block";
+}
+
+function CloneFunction(copyTarget, pasteTarget){
+
+  var itm = document.getElementById(copyTarget);
+  var cln = itm.cloneNode(true);
+
+  cln.style.display = "block";
+  document.getElementById(pasteTarget).appendChild(cln);
+  itm.remove();
 }
