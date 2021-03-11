@@ -905,7 +905,7 @@ function FilterText(){
   var titleLabel = document.createElement("label");
 
   titleLabel.id = "titleLabelID";
-  targeOutputId.appendChild(titleLabel);
+  CloneFunction("chatTitleLabel", "outputDivChildID");
   targeOutputId.appendChild(document.createElement("br"));
   targeOutputId.appendChild(document.createElement("br"));
 
