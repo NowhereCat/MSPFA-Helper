@@ -811,6 +811,24 @@ var presets =[
     textBGColor: "white",
     titleBGColor: "white",
     titleColor: "white"
+  },
+  {
+    presetName: "Darzuz",
+    tag: "darzuzMacabu",
+    textTitle: ["Darzuz", "DM", "Darzuz"],
+    group: "custom",
+    remove: "",
+    replace: "",
+    capitalization: "neither",
+    capsSensitive: false,
+    gamzeeQuirk: false,
+    tavrosQuirk: false,
+    prefix: "",
+    post: "",
+    color: "#2b0057",
+    textBGColor: "white",
+    titleBGColor: "white",
+    titleColor: "white"
   }
 ];
 
