@@ -789,7 +789,7 @@ var presets =[
     tavrosQuirk: false,
     prefix: "",
     post: "",
-    color: "#b7410e",
+    color: "#4f0015",
     textBGColor: "white",
     titleBGColor: "white",
     titleColor: "white"
