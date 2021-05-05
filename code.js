@@ -929,7 +929,22 @@ function FilterText(){
 
   output = "";
 
-  inputArray = input.split("\n");
+  var treatmentVar = [];
+  console.log(input);
+  treatmentVar = input.split("\n");
+  var postTreatment = [];
+  var postTreatmentInt = 0;
+  for (var i = 0; i < treatmentVar.length; i++) {
+    if(treatmentVar[i] != ""){
+      postTreatment[postTreatmentInt] = treatmentVar[i];
+      postTreatmentInt++;
+    }
+  }
+
+  console.log(postTreatment);
+
+  //inputArray = input.split("\n");
+  inputArray = postTreatment;
   changeArray = change.split(",");
   replacementArray = replacement.split(",");
 
@@ -967,40 +982,42 @@ function FilterText(){
   document.getElementById("secondaryOutputTextArea").innerHTML = "";
 
   for (var i = 0; i < inputArray.length; i++) {
-    xDevide = inputArray[i].split(":");
-    inputTags.push(xDevide[0]);
-    inputDialogue.push(xDevide[1]);
-    labelColor = GetPresetColor(inputTags[i]);
+    if(inputArray[i] != "") {
+      xDevide = inputArray[i].split(":");
+      inputTags.push(xDevide[0]);
+      inputDialogue.push(xDevide[1]);
+      labelColor = GetPresetColor(inputTags[i]);
 
-    if(inputTags[i] != "memoCreator"){
-      var filteredOutput = GetUserTitle(inputTags[i], textTitleIndex) + ":" + ReturnFilter(inputDialogue[i], inputTags[i]);
+      if(inputTags[i] != "memoCreator"){
+        var filteredOutput = GetUserTitle(inputTags[i], textTitleIndex) + ":" + ReturnFilter(inputDialogue[i], inputTags[i]);
 
-      //console.log(filteredOutput);
+        //console.log(filteredOutput);
 
-      BBCodeOutput(filteredOutput, labelColor);
+        BBCodeOutput(filteredOutput, labelColor);
 
-      var label = document.createElement("label");
-      label.innerHTML = filteredOutput;
-      label.id = labelIDInt;
-      targeOutputId.appendChild(label);
-      targeOutputId.appendChild(document.createElement("br"));
-      document.getElementById(labelIDInt).style.color = labelColor;
-      labelIDInt++;
-    }
+        var label = document.createElement("label");
+        label.innerHTML = filteredOutput;
+        label.id = labelIDInt;
+        targeOutputId.appendChild(label);
+        targeOutputId.appendChild(document.createElement("br"));
+        document.getElementById(labelIDInt).style.color = labelColor;
+        labelIDInt++;
+      }
 
-    //Title Set
-    if(!secondFound){
-      if(inputTags[i] != presets[document.getElementById("presetsID").value].tag){
-        for (var e = 0; e < presets.length; e++) {
-          if(presets[e].tag == inputTags[i]){
-            secondChatUser = presets[e].textTitle[2];
-            secondChatUserInitials = presets[e].textTitle[1];
-            secondChatUserColor = presets[e].color;
+      //Title Set
+      if(!secondFound){
+        if(inputTags[i] != presets[document.getElementById("presetsID").value].tag){
+          for (var e = 0; e < presets.length; e++) {
+            if(presets[e].tag == inputTags[i]){
+              secondChatUser = presets[e].textTitle[2];
+              secondChatUserInitials = presets[e].textTitle[1];
+              secondChatUserColor = presets[e].color;
+            }
           }
+          secondFound = true;
+          NewSetTitle();
+          //titleLabel.innerHTML = SetTile();
         }
-        secondFound = true;
-        NewSetTitle();
-        //titleLabel.innerHTML = SetTile();
       }
     }
   }
