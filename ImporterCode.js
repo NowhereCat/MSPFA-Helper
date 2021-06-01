@@ -1,3 +1,3 @@
-import {User, test} from './code.js'
+import {test} from './code.js'
 
 console.log(test);

@@ -1,11 +1,4 @@
-export default class User {
-  constructor(name, age){
-    this.name = Name
-    this.age = age
-  }
-}
-
-export var test = "Hello";
+export default var test = "Hello";
 
 var sampleText = "aradiaMegido: Hello\naradiaMegido: How are you?\nkarkatVantas: Bad. Fuck off";
 var sampleTextMemo = "";
