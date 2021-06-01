@@ -1,3 +1,16 @@
+app.use(function(req, res, next){
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+export default class User {
+  constructor(name, age){
+    this.name = Name
+    this.age = age
+  }
+}
+
 var sampleText = "aradiaMegido: Hello\naradiaMegido: How are you?\nkarkatVantas: Bad. Fuck off";
 var sampleTextMemo = "";
 
@@ -831,6 +844,8 @@ var presets =[
     titleColor: "white"
   }
 ];
+
+var textImporter = "BOOP";
 
 var guideText = "";
 

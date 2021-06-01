@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MSPFA Helper Import</title>
+      <link rel="stylesheet" href="css.css">
+      <script src="jquery-3.6.0.js"></script>
+  </head>
+  <header>
+    <h1>Importer</h1>
+  </header>
+  <body>
+    <label>Character Name:</label><br>
+    <textarea rows="1" cols="40" class="impCharacterNameClass" id="impCharacterNameID"></textarea>
+    <br><br>
+    <label>Character tag:</label><br>
+    <textarea rows="1" cols="40" class="impCharacterTagClass" id="impCharacterTagID"></textarea>
+    <br><br>
+    <label>First Name:</label>
+    <textarea rows="1" cols="10" class="impFirstNameClass" id="impFirstNameID"></textarea>
+    <label>Chat Handle:</label>
+    <textarea rows="1" cols="15" class="impChatHandleClass" id="impChatHandleID"></textarea>
+    <br><br>
+    <label>Quirk:</label><br>
+    <label>Replace: </label>
+    <textarea rows="1" cols="10" class="impRemoveClass" id="impRemoveID"></textarea>
+    <label>With: </label>
+    <textarea rows="1" cols="10" class="impPlaceClass" id="impReplaceID"></textarea>
+    <br><br>
+    <form class="impCaptalizationClass" id="impCaptalizationID" action="index.html" method="post">
+      <label>Captalization: </label>
+      <select class="" name="">
+        <option value="0">Normal Captalisation</option>
+        <option value="1">All Capitalised</option>
+        <option value="2">No Capitalisation</option>
+      </select>
+    </form>
+    <br><br>
+    <input type="checkbox" class="impCaptSensitiveClass" id="impCaptSensitiveID">
+    <label>Cap senseitive</label>
+    <br><br>
+    <input type="checkbox" class="impGamzeeQuirkClass" id="impGamzeeQuirkID">
+    <label>Gamzee Quirk</label>
+    <br><br>
+    <input type="checkbox" class="impTavrosQuirkClass" id="impTavrosQuirkID">
+    <label>Tavros Quirk</label>
+    <br><br>
+    <label>Prefix: </label> <textarea rows="1" cols="10" class="impPrefixClass" id="impPrefixID"></textarea>
+    <br><br>
+    <label>Suffix: </label> <textarea rows="1" cols="10" class="impSuffixClass" id="impSuffixID"></textarea>
+    <br><br>
+    <label>Color: </label> <input type="color" name="" value="" class="impColorClass" id="impColorID">
+  </body>
+  <script type="module" src="ImporterCode.js"></script>
+</html>
