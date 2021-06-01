@@ -5,6 +5,8 @@ export default class User {
   }
 }
 
+export var test = "Hello";
+
 var sampleText = "aradiaMegido: Hello\naradiaMegido: How are you?\nkarkatVantas: Bad. Fuck off";
 var sampleTextMemo = "";
 

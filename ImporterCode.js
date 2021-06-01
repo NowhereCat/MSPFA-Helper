@@ -1,1 +1,3 @@
-import User from './code.js'
+import {User, test} from './code.js'
+
+console.log(test);
