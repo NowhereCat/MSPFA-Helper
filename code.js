@@ -1329,7 +1329,7 @@ var ReturnFilter = function (input, presetTag){
       inputDevided[i] = inputDevided[i].replace(removeWordFilter[e], replaceWordFilter[e]);
     }
     //console.log("After: " + inputDevided[i]);
-    inputDevidedResult += (" " + inputDevided[i] + " ");
+    inputDevidedResult += (" " + inputDevided[i]);
   }
 
 console.log("Input decided Result: " + inputDevidedResult);
