@@ -1326,7 +1326,8 @@ var ReturnFilter = function (input, presetTag){
   for (var i = 0; i < inputDevided.length; i++) {
     //console.log("Before: " + inputDevided[i]);
     for (var e = 0; e < removeWordFilter.length; e++) {
-      inputDevided[i] = inputDevided[i].replace(removeWordFilter[e], replaceWordFilter[e]);
+      //inputDevided[i] = inputDevided[i].replace(removeWordFilter[e], replaceWordFilter[e]);
+      if(inputDevided[i] == removeWordFilter[e]) inputDevided[i] = replaceWordFilter[e];
     }
     //console.log("After: " + inputDevided[i]);
     inputDevidedResult += (" " + inputDevided[i]);
