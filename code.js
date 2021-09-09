@@ -1219,6 +1219,11 @@ function FilterText(){
         targeOutputId.appendChild(document.createElement("br"));
         document.getElementById(labelIDInt).style.color = labelColor;
         labelIDInt++;
+
+        if(document.getElementById("lineBreakCheckboxID").checked && i != inputArray.length){
+           document.getElementById("secondaryOutputTextArea").innerHTML += "\n";
+           targeOutputId.appendChild(document.createElement("br"));
+         }
       }
 
       //Title Set
