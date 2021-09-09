@@ -1330,10 +1330,16 @@ var ReturnFilter = function (input, presetTag){
 
   for (var i = 0; i < inputDevided.length; i++) {
     //console.log("Before: " + inputDevided[i]);
+    var splitWords = inputDevided[i].split(/\s*\b\s*/);
+    var spliWordsOutput;
     for (var e = 0; e < removeWordFilter.length; e++) {
       //inputDevided[i] = inputDevided[i].replace(removeWordFilter[e], replaceWordFilter[e]);
-      if(inputDevided[i] == removeWordFilter[e]) inputDevided[i] = replaceWordFilter[e];
+      for (var a = 0; a < splitWords.length; a++) {
+        if(splitWords[a] == removeWordFilter[e]) splitWords[a] = replaceWordFilter[e];
+      }
+      //if(inputDevided[i] == removeWordFilter[e]) inputDevided[i] = replaceWordFilter[e];
     }
+    inputDevided[i] = splitWords.join('');
     //console.log("After: " + inputDevided[i]);
     inputDevidedResult += (" " + inputDevided[i]);
   }
