@@ -1454,3 +1454,11 @@ function CloneFunction(copyTarget, pasteTarget, newID){
   document.getElementById(pasteTarget).appendChild(cln);
   //itm.remove();
 }
+
+function CopyText(){
+  console.log("Copying Text");
+  var copyTextArea = document.getElementById("secondaryOutputTextArea");
+  copyTextArea.select();
+  document.execCommand("copy");
+  //if(document.getElementById("secondaryOutputTextArea").value != null) console.log("Not Empty");
+}
